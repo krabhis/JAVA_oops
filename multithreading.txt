@@ -1,0 +1,41 @@
+Process:-
+
+1. A program which is in executing state.
+
+2.It is   heavy weight.
+
+3.In context switching it takes more time
+
+4. Each process has different address space. 
+
+5.Process are not dependednt on each other.
+
+6. Process doesnot require synchronisation.
+
+7.Resourse consumption is more.
+
+8.Takes moretime for creation.
+
+9.Process require more time for termination.
+
+
+
+Thread:-
+
+1. It is subpart of process.
+
+2. Lightweight.
+
+3. Takes less time for context switching.
+
+4. Threads have same address space.
+
+5.Threads are depended on each other.
+
+6.Thread may require synchronisation.
+
+7.Resourse consumption is less.
+
+8.Takes lesstime for creation.
+
+9.Process require less time for termination.

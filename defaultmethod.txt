@@ -1,0 +1,76 @@
+Before Java 8, if you added a new method to an interface, all the classes implementing that interface would need to be updated to include an implementation of the new method. This could lead to significant issues in large codebases, where many classes implement a given interface.
+
+To solve this problem, Java 8 introduced default methods in interfaces. Default methods allow you to add new methods to an interface with a default implementation, so existing classes that implement the interface do not need to be modified.
+
+Example Without Default Methods (Java 7 and Earlier)
+
+interface Vehicle {
+    void start();
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started.");
+    }
+}
+
+// Adding a new method in Java 7 would require changes in all implementing classes
+interface Vehicle {
+    void start();
+    void stop();  // New method added
+}
+
+// Now, Car must implement stop()
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stopped.");
+    }
+}
+
+
+Example With Default Methods (Java 8 and Later)
+
+interface Vehicle {
+    void start();
+
+    // Default method with an implementation
+    default void stop() {
+        System.out.println("Vehicle stopped.");
+    }
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started.");
+    }
+    // No need to implement stop() unless a custom behavior is needed
+}
+
+public class DefaultMethodExample {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.start(); // Output: Car started.
+        myCar.stop();  // Output: Vehicle stopped.
+    }
+}
+
+Key Points
+Backward Compatibility: Default methods provide a way to add new methods to interfaces without breaking existing implementations. This maintains backward compatibility with older code.
+Optional Override: Implementing classes can override default methods if they need a specific behavior, but they are not forced to do so.
+By using default methods, developers can evolve interfaces and add new functionalities over time without forcing changes on all classes that implement those interfaces, thus preventing potential disruptions and reducing the maintenance burden.
+
+
+
+
+
+
+
+

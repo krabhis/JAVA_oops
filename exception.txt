@@ -1,0 +1,21 @@
+types of exception=>
+1. checked exception=>
+(compiletime time pe) 
+ex--
+    file not found
+     sql not found 
+     IO exception
+     class not found
+
+
+2. unchecked exception
+(run time pe) 
+ex--
+   arithmetic exception
+   array outofbound exception
+   null exception
+   illegal thread exception
+
+Exception handelling---
+
+try,catch,finally,throw,throws

@@ -1,0 +1,55 @@
+In Java, it is compulsory to name the file after the public class contained within it. If a Java file contains a public class, the name of the file must match the name of the public class exactly, including the case. Here are the rules and scenarios to illustrate this:
+
+Public Class
+Rule: If a file contains a public class, the filename must exactly match the name of the public class.
+
+Example:
+
+java
+Copy code
+// File: MyClass.java
+public class MyClass {
+    public static void main(String[] args) {
+        System.out.println("This is a public class.");
+    }
+}
+The file must be named MyClass.java. If the filename is different, the compiler will throw an error.
+Default (Package-Private) Class
+
+Rule: If a class is not public, the filename does not have to match the class name.
+
+Example:
+
+java
+Copy code
+// File: AnyName.java
+class MyClass {
+    public static void main(String[] args) {
+        System.out.println("This is a package-private class.");
+    }
+}
+The file can be named anything, such as AnyName.java.
+Multiple Classes in One File
+Rule: A file can contain multiple classes, but at most one of them can be public, and the filename must match the name of the public class.
+
+Example:
+
+java
+Copy code
+// File: MyMainClass.java
+public class MyMainClass {
+    public static void main(String[] args) {
+        System.out.println("This is the public main class.");
+    }
+}
+
+class AnotherClass {
+    void display() {
+        System.out.println("This is another class.");
+    }
+}
+The file must be named MyMainClass.java.
+Why This Rule Exists
+The rule that the filename must match the public class name helps the Java compiler and JVM locate and load classes in a consistent manner. This convention simplifies the process of managing and organizing code, especially in larger projects.
+
+-----------------------------------------------------------------------------------------------------------------------
